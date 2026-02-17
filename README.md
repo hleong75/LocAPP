@@ -1,5 +1,7 @@
 # LocAPP - Location Tracking SMS Application
 
+> 📱 **[→ Télécharger les APK ici](DOWNLOAD_APK.md)** - Guide complet pour obtenir les applications compilées
+
 ## Description
 
 LocAPP est une application Android complète qui permet de suivre et d'envoyer automatiquement la localisation GPS du téléphone par SMS.

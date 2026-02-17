@@ -1,0 +1,57 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      
+      - name: Build Basic Debug APK
+        run: ./gradlew assembleBasicDebug
+      
+      - name: Build WithCity Debug APK
+        run: ./gradlew assembleWithcityDebug
+      
+      - name: Upload Basic APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-basic-debug
+          path: app/build/outputs/apk/basic/debug/app-basic-debug.apk
+          if-no-files-found: error
+      
+      - name: Upload WithCity APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-withcity-debug
+          path: app/build/outputs/apk/withcity/debug/app-withcity-debug.apk
+          if-no-files-found: error
+      
+      - name: Build Summary
+        run: |
+          echo "## Build Summary :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### APK Files Generated" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          ls -lh app/build/outputs/apk/basic/debug/*.apk | awk '{print "- Basic APK: " $9 " (" $5 ")"}' >> $GITHUB_STEP_SUMMARY
+          ls -lh app/build/outputs/apk/withcity/debug/*.apk | awk '{print "- WithCity APK: " $9 " (" $5 ")"}' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ APKs are available in the Artifacts section above" >> $GITHUB_STEP_SUMMARY
