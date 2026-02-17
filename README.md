@@ -61,7 +61,7 @@ L'application demande les permissions suivantes :
 ### Prérequis
 - JDK 8 ou supérieur
 - Android SDK (API 24-34)
-- Gradle 8.0+
+- Gradle 8.9+ (or Gradle 9.x)
 
 ### Compilation
 

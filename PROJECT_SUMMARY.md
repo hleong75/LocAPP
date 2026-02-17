@@ -142,8 +142,8 @@ build_both.bat
 ### Android SDK & Outils
 - **Minimum SDK**: API 24 (Android 7.0)
 - **Target SDK**: API 34 (Android 14)
-- **Gradle**: 8.0+
-- **Android Gradle Plugin**: 8.1.0
+- **Gradle**: 8.9+ (or Gradle 9.x)
+- **Android Gradle Plugin**: 8.7.3
 
 ### Bibliothèques
 - **AndroidX AppCompat**: 1.6.1
