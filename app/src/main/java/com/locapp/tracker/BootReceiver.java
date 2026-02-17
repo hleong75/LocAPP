@@ -15,16 +15,20 @@ public class BootReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
-            Log.d(TAG, "Boot completed");
-            
-            SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-            boolean trackingActive = prefs.getBoolean("trackingActive", false);
-            
-            if (trackingActive) {
-                int frequency = prefs.getInt("frequency", 15);
-                scheduleLocationUpdates(context, frequency);
-            }
+        // Verify intent action to prevent processing of unintended intents
+        if (intent == null || !Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            Log.w(TAG, "Received non-BOOT_COMPLETED intent, ignoring");
+            return;
+        }
+        
+        Log.d(TAG, "Boot completed");
+        
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        boolean trackingActive = prefs.getBoolean("trackingActive", false);
+        
+        if (trackingActive) {
+            int frequency = prefs.getInt("frequency", 15);
+            scheduleLocationUpdates(context, frequency);
         }
     }
 
