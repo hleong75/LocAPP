@@ -162,8 +162,16 @@ Le projet utilise les Product Flavors Gradle pour créer deux versions :
 
 ## Compatibilité
 
-- Android 7.0 (API 24) et supérieur
+- **Android 7.0 (API 24) et supérieur**
 - Testé jusqu'à Android 14 (API 34)
+
+### Pourquoi minSDK 24?
+Le minimum SDK a été choisi comme Android 7.0 (API 24) pour les raisons suivantes:
+- Support natif des services en premier plan avec notifications améliorées
+- Meilleure gestion des permissions runtime
+- API de localisation plus stable et performante
+- Support de l'optimisation de batterie Doze mode
+- Représente >95% des appareils Android actifs en 2024
 
 ## Licence
 

@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         Intent serviceIntent = new Intent(this, LocationService.class);
         stopService(serviceIntent);
 
-        Toast.makeText(this, "Suivi arrêté", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.tracking_stopped, Toast.LENGTH_SHORT).show();
         updateUI();
     }
 

@@ -12,5 +12,5 @@
     <string name="invalid_frequency">Fréquence invalide</string>
     <string name="permission_required">Permissions requises pour le suivi</string>
     <string name="location_sent">Localisation envoyée</string>
-    <string name="sms_failed">Échec de l\'envoi SMS</string>
+    <string name="tracking_stopped">Suivi arrêté</string>
 </resources>

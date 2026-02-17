@@ -38,6 +38,7 @@ public class LocationService extends Service {
     private static final String CHANNEL_ID = "LocationServiceChannel";
     private static final int NOTIFICATION_ID = 1001;
     private static final String PREFS_NAME = "LocAPPPrefs";
+    private static final int SMS_MAX_LENGTH = 160;
 
     private FusedLocationProviderClient fusedLocationClient;
     private LocationCallback locationCallback;
@@ -150,7 +151,7 @@ public class LocationService extends Service {
             SmsManager smsManager = SmsManager.getDefault();
             
             // Split message if it's too long
-            if (message.length() > 160) {
+            if (message.length() > SMS_MAX_LENGTH) {
                 smsManager.sendMultipartTextMessage(
                         phoneNumber, 
                         null, 
