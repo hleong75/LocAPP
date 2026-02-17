@@ -201,13 +201,12 @@ This should not happen under normal circumstances, please file an issue if it do
 
 **Cause** : Cette erreur survient généralement dans des environnements conteneurisés (Docker, CI/CD) ou des systèmes avec des restrictions de sécurité.
 
-**Solution** : Le fichier `gradle.properties` contient déjà les configurations nécessaires :
+**Solution** : Le fichier `gradle.properties` contient déjà la configuration nécessaire :
 ```properties
 android.enableAapt2jni=false
-android.aapt2FromMavenOverride=com.android.tools.build:aapt2:8.6.1-11315950
 ```
 
-Ces paramètres désactivent le mode daemon d'AAPT2 et utilisent une version de Maven, ce qui résout le problème dans la plupart des environnements restreints.
+Ce paramètre désactive le mode daemon d'AAPT2, ce qui résout le problème dans la plupart des environnements restreints.
 
 ### Le suivi ne démarre pas
 - Vérifier que toutes les permissions sont accordées
