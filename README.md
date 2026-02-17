@@ -63,6 +63,26 @@ L'application demande les permissions suivantes :
 - Android SDK (API 24-34)
 - Gradle 8.9+
 
+### Configuration du SDK Android
+
+Avant de compiler, vous devez configurer l'emplacement du SDK Android. Créez un fichier `local.properties` à la racine du projet avec le contenu suivant :
+
+```properties
+sdk.dir=/path/to/your/android/sdk
+```
+
+Par exemple :
+- **Linux** : `sdk.dir=/home/username/Android/Sdk`
+- **macOS** : `sdk.dir=/Users/username/Library/Android/Sdk`
+- **Windows** : `sdk.dir=C\:\\Users\\username\\AppData\\Local\\Android\\Sdk`
+
+> **Note** : Le fichier `local.properties` est automatiquement ignoré par Git et ne doit jamais être commité dans le dépôt car il contient des chemins spécifiques à votre environnement local.
+
+Alternativement, vous pouvez définir la variable d'environnement `ANDROID_HOME` :
+```bash
+export ANDROID_HOME=/path/to/your/android/sdk
+```
+
 ### Compilation
 
 #### Version Basic (sans nom de ville)
