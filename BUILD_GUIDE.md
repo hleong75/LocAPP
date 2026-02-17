@@ -25,7 +25,7 @@ sdk.dir=/path/to/your/android/sdk
 **Exemples de chemins SDK typiques :**
 
 - **Linux** : `sdk.dir=/home/username/Android/Sdk`
-- **macOS** : `sdk.dir=/Users/username/Library/Android/sdk`
+- **macOS** : `sdk.dir=/Users/username/Library/Android/Sdk`
 - **Windows** : `sdk.dir=C\:\\Users\\username\\AppData\\Local\\Android\\Sdk`
 
 > **Important** : Le fichier `local.properties` ne doit jamais être commité dans Git (il est déjà dans `.gitignore`).
