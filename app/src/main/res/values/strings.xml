@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LocAPP Tracker</string>
+    <string name="phone_number_hint">Numéro de téléphone (+33...)</string>
+    <string name="frequency_label">Fréquence (minutes)</string>
+    <string name="start_tracking">Démarrer le suivi</string>
+    <string name="stop_tracking">Arrêter le suivi</string>
+    <string name="tracking_active">Suivi actif</string>
+    <string name="tracking_inactive">Suivi inactif</string>
+    <string name="settings_saved">Paramètres enregistrés</string>
+    <string name="invalid_phone">Numéro de téléphone invalide</string>
+    <string name="invalid_frequency">Fréquence invalide</string>
+    <string name="permission_required">Permissions requises pour le suivi</string>
+    <string name="location_sent">Localisation envoyée</string>
+    <string name="tracking_stopped">Suivi arrêté</string>
+</resources>
