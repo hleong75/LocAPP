@@ -193,6 +193,19 @@ Le minimum SDK a été choisi comme Android 7.0 (API 24) pour les raisons suivan
 - Support de l'optimisation de batterie Doze mode
 - Représente >95% des appareils Android actifs en 2024
 
+## Dépannage
+
+### Erreur de Compilation AAPT2
+
+Si vous rencontrez l'erreur `AAPT2 daemon startup failed` lors de la compilation, notamment dans des environnements Docker ou CI/CD, le projet est déjà configuré pour contourner ce problème via `gradle.properties`. Les paramètres suivants sont déjà définis :
+
+```properties
+android.enableAapt2jni=false
+android.aapt2FromMavenOverride=com.android.tools.build:aapt2:8.6.1-11315950
+```
+
+Pour plus de détails sur la compilation et le dépannage, consultez le [Guide de Compilation](BUILD_GUIDE.md).
+
 ## Licence
 
 Ce projet est fourni tel quel pour usage personnel ou éducatif.

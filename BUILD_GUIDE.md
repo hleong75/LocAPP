@@ -189,6 +189,26 @@ adb logcat | grep SMS
 
 ## Dépannage
 
+### Problèmes de Compilation
+
+#### Erreur AAPT2 daemon startup failed
+
+Si vous rencontrez l'erreur :
+```
+AAPT2 aapt2-8.6.1-11315950-linux Daemon #0: Daemon startup failed
+This should not happen under normal circumstances, please file an issue if it does.
+```
+
+**Cause** : Cette erreur survient généralement dans des environnements conteneurisés (Docker, CI/CD) ou des systèmes avec des restrictions de sécurité.
+
+**Solution** : Le fichier `gradle.properties` contient déjà les configurations nécessaires :
+```properties
+android.enableAapt2jni=false
+android.aapt2FromMavenOverride=com.android.tools.build:aapt2:8.6.1-11315950
+```
+
+Ces paramètres désactivent le mode daemon d'AAPT2 et utilisent une version de Maven, ce qui résout le problème dans la plupart des environnements restreints.
+
 ### Le suivi ne démarre pas
 - Vérifier que toutes les permissions sont accordées
 - Vérifier que la localisation est activée sur le téléphone

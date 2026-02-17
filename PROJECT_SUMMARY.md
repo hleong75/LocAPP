@@ -304,6 +304,11 @@ Voir [SECURITY.md](SECURITY.md) pour l'analyse complète.
 
 ## Changelog
 
+### Version 1.0.1 (2026-02-17)
+- ✅ Fix AAPT2 daemon startup failures in containerized environments
+- ✅ Added gradle.properties configurations for Docker/CI/CD compatibility
+- ✅ Enhanced documentation with troubleshooting section
+
 ### Version 1.0 (2026-02-17)
 - ✅ Implémentation complète des deux versions (Basic & WithCity)
 - ✅ Interface utilisateur en français
