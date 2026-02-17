@@ -7,9 +7,12 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!-- FOREGROUND_SERVICE_LOCATION requires API 29+ (Android 10) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" android:minSdkVersion="29" />
+    <!-- POST_NOTIFICATIONS requires API 33+ (Android 13) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" android:minSdkVersion="33" />
+    <!-- SCHEDULE_EXACT_ALARM requires API 31+ (Android 12) -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" android:minSdkVersion="31" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
