@@ -1,5 +1,50 @@
 # Guide de Compilation et Installation
 
+## Prérequis
+
+Avant de compiler l'application, assurez-vous d'avoir :
+
+1. **JDK 8 ou supérieur** installé
+2. **Android SDK** (API 24-34) installé
+3. **Gradle 8.9+** (inclus avec le wrapper Gradle du projet)
+
+## Configuration du SDK Android
+
+### Méthode Automatique (Android Studio)
+
+Si vous utilisez Android Studio, le SDK sera automatiquement détecté et configuré lors de l'ouverture du projet.
+
+### Méthode Manuelle (Ligne de Commande)
+
+Si vous compilez en ligne de commande, vous devez créer un fichier `local.properties` à la racine du projet :
+
+```properties
+sdk.dir=/path/to/your/android/sdk
+```
+
+**Exemples de chemins SDK typiques :**
+
+- **Linux** : `sdk.dir=/home/username/Android/Sdk`
+- **macOS** : `sdk.dir=/Users/username/Library/Android/sdk`
+- **Windows** : `sdk.dir=C\:\\Users\\username\\AppData\\Local\\Android\\Sdk`
+
+> **Important** : Le fichier `local.properties` ne doit jamais être commité dans Git (il est déjà dans `.gitignore`).
+
+**Alternative : Variable d'environnement**
+
+Vous pouvez aussi définir la variable d'environnement `ANDROID_HOME` :
+
+```bash
+# Linux/Mac
+export ANDROID_HOME=/path/to/android/sdk
+
+# Windows (cmd)
+set ANDROID_HOME=C:\path\to\android\sdk
+
+# Windows (PowerShell)
+$env:ANDROID_HOME="C:\path\to\android\sdk"
+```
+
 ## Compilation des Applications
 
 ### Méthode 1 : Avec Android Studio
